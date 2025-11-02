@@ -54,7 +54,7 @@ def job_alert():
     body+=format_jobs("Indeed",scrape_indeed())
     body+="🔸 Apna jobs: Automation needs Selenium or API\n\n"
     body+="🔸 LinkedIn jobs: Automation requires Selenium or ScraperAPI\n\n"
-    send_email("🔥 Daily Fresher Job Alerts (AI/ML/Data)",body)
+    send_email(" Daily Fresher Job Alerts (AI/ML/Data)",body)
 
 def send_email(subject,body):
     msg=MIMEMultipart(); msg["From"]=EMAIL; msg["To"]=TO; msg["Subject"]=subject
@@ -67,7 +67,7 @@ def send_email(subject,body):
     print("✅ Email sent")
 
 schedule.every().day.at("19:00").do(job_alert)
-print("⏱️ Scheduled: every day at 7 PM")
+print("⏱️ Scheduled: every day at 7PM")
 while True:
     schedule.run_pending()
     time.sleep(60)
